@@ -1,0 +1,298 @@
+// Modern CSS3 Calculator without images.
+// by @jofelipe_
+// www.jonathanfelipe.com.br
+// Comecei as 14h56 do dia 09/07/2012
+
+// Importando o CSS Reset
+@import 'reset.less';
+
+// Fonte personalizada
+@import 'font.less';
+
+body { 
+	background: url(../bg.jpg) repeat;
+}
+
+.clear { clear: both; height: 0 }
+
+// Estilo da div#geral quando a calculadora estiver "desligada"
+
+#geral { // Tela de apresentação
+	width: 960px;
+	margin: 5% auto;
+	overflow: hidden;
+
+	.borda-calculadora { // Borda da calculadora
+		width: 480px;
+		padding: 8px;
+		border-radius: 43px;
+		float: left;
+		overflow: hidden;
+
+		// Borda em gradiente
+		background-image: linear-gradient(right bottom, rgb(54,54,54) 27%, rgb(128,128,128) 64%, rgb(59,59,59) 82%);
+		background-image: -o-linear-gradient(right bottom, rgb(54,54,54) 27%, rgb(128,128,128) 64%, rgb(59,59,59) 82%);
+		background-image: -moz-linear-gradient(right bottom, rgb(54,54,54) 27%, rgb(128,128,128) 64%, rgb(59,59,59) 82%);
+		background-image: -webkit-linear-gradient(right bottom, rgb(54,54,54) 27%, rgb(128,128,128) 64%, rgb(59,59,59) 82%);
+		background-image: -ms-linear-gradient(right bottom, rgb(54,54,54) 27%, rgb(128,128,128) 64%, rgb(59,59,59) 82%);
+
+		background-image: -webkit-gradient(
+			linear,
+			right bottom,
+			left top,
+			color-stop(0.27, rgb(54,54,54)),
+			color-stop(0.64, rgb(128,128,128)),
+			color-stop(0.82, rgb(59,59,59))
+		);
+
+
+		#calculadora { // Estrutura da calculadora
+			width: 450px;
+			background: #ccc;
+			overflow: hidden;
+			border-radius: 35px;
+			padding: 15px;
+
+			// Fundo com gradiente
+			background: #e0e0e0;
+			background: -moz-linear-gradient(-45deg,  #e0e0e0 0%, #b2b2b2 45%, #e0e0e0 80%, #e5e5e5 100%);
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e0e0e0), color-stop(45%,#b2b2b2), color-stop(80%,#e0e0e0), color-stop(100%,#e5e5e5));
+			background: -webkit-linear-gradient(-45deg,  #e0e0e0 0%,#b2b2b2 45%,#e0e0e0 80%,#e5e5e5 100%);
+			background: -o-linear-gradient(-45deg,  #e0e0e0 0%,#b2b2b2 45%,#e0e0e0 80%,#e5e5e5 100%);
+			background: -ms-linear-gradient(-45deg,  #e0e0e0 0%,#b2b2b2 45%,#e0e0e0 80%,#e5e5e5 100%);
+			background: linear-gradient(135deg,  #e0e0e0 0%,#b2b2b2 45%,#e0e0e0 80%,#e5e5e5 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e5e5e5',GradientType=1 );
+
+
+			.topo-calculadora { // Topo da calculadora (Elementos)
+				overflow: hidden;
+
+				.titulo { // Alinhar título e descricão da calculadora
+					float: left;
+					padding: 10px 15px;
+
+					h1 { // Nome da calculadora
+						color: rgba(0, 0, 0, .5);
+						display: block;
+					    font: 40px/35px 'Audiowide';
+					    text-transform: uppercase;
+					    -webkit-font-smoothing: none;
+						-webkit-font-smoothing: subpixel-antialiased;
+						-webkit-font-smoothing: antialiased;
+					}
+
+					.descricao { // Estilo da descrição
+						color: rgba(139, 137, 137, .95);
+						font: 18px 'Audiowide';
+					    text-transform: uppercase;
+					    -webkit-font-smoothing: none;
+						-webkit-font-smoothing: subpixel-antialiased;
+						-webkit-font-smoothing: antialiased;
+					}
+				}
+
+				.quadrados { // Quadrados da calculadora
+					float: right;
+				    overflow: hidden;
+				    padding: 25px 0 10px;
+
+				    ul {
+				    	height: 25px;
+					    overflow: hidden;
+					    width: 150px;
+
+					    li {
+					    	width: 30px;
+					    	height: 30px;
+					    	float: left;
+					    	background: #8B0000;
+					    	border-right: 1px solid #B52828;
+					    }
+					    li:last-child {
+					    	border-right: none;
+					    }
+				    }
+				}
+			}
+
+			input[type="text"] { // Estilo do campo de números
+
+				// Fundo com gradiente
+				background-image: linear-gradient(bottom, #829081 50%, #718570 50%);
+				background-image: -o-linear-gradient(bottom, #829081 50%, #718570 50%);
+				background-image: -moz-linear-gradient(bottom, #829081 50%, #718570 50%);
+				background-image: -webkit-linear-gradient(bottom, #829081 50%, #718570 50%);
+				background-image: -ms-linear-gradient(bottom, #829081 50%, #718570 50%);
+				background-image: -webkit-gradient(
+					linear,
+					left bottom,
+					left top,
+					color-stop(0.5, #829081),
+					color-stop(0.5, #718570)
+				);
+				padding: 2px 10px 0;
+				width: 96%; // Tamanho do campo em porcentagem
+				height: 100px;
+				border: 0;
+				margin-bottom: 20px;
+
+				// Fontes do campo no estilo digital
+				font: 98px 'Digital', sans-serif;
+				color: rgba(255, 255, 255, .75); // Cor com opacidade
+				text-align: right;
+				-webkit-font-smoothing: none;
+				-webkit-font-smoothing: subpixel-antialiased;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			#botoes-opcoes { // Botoes de opções de cálculo
+				overflow: hidden;
+
+				li {
+					display: block;
+					float: left;
+					cursor: pointer;
+					width: 61px;
+					background: #757575;
+					text-align: center;
+
+					// Fundo dos botões com gradiente
+					background: -moz-radial-gradient(center, ellipse cover,  #757575 0%, #494949 47%, #383838 100%);
+					background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#757575), color-stop(47%,#494949), color-stop(100%,#383838));
+					background: -webkit-radial-gradient(center, ellipse cover,  #757575 0%,#494949 47%,#383838 100%);
+					background: -o-radial-gradient(center, ellipse cover,  #757575 0%,#494949 47%,#383838 100%);
+					background: -ms-radial-gradient(center, ellipse cover,  #757575 0%,#494949 47%,#383838 100%);
+					background: radial-gradient(ellipse at center,  #757575 0%,#494949 47%,#383838 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#757575', endColorstr='#383838',GradientType=1 );
+					margin: 0 15px 15px 0;
+					border-radius: 10px;
+					font: 40px/35px 'Audiowide';
+					color: #FFF;
+					padding: 20px;
+
+						&:hover {
+							background: #939393;
+							background: -moz-radial-gradient(center, ellipse cover,  #939393 0%, #606060 47%, #191919 100%);
+							background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#939393), color-stop(47%,#606060), color-stop(100%,#191919));
+							background: -webkit-radial-gradient(center, ellipse cover,  #939393 0%,#606060 47%,#191919 100%);
+							background: -o-radial-gradient(center, ellipse cover,  #939393 0%,#606060 47%,#191919 100%);
+							background: -ms-radial-gradient(center, ellipse cover,  #939393 0%,#606060 47%,#191919 100%);
+							background: radial-gradient(ellipse at center,  #939393 0%,#606060 47%,#191919 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#191919',GradientType=1 );
+
+					}
+				}
+
+						li:nth-child(4n+4) { margin-right: 0 }
+						li.mrc { font-size: 24px }
+						li.off { // Estilo personalizado para o botão OFF
+
+							background: #cc0000;
+							background: -moz-radial-gradient(center, ellipse cover,  #cc0000 0%, #c92e2e 48%, #890000 100%);
+							background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#cc0000), color-stop(48%,#c92e2e), color-stop(100%,#890000));
+							background: -webkit-radial-gradient(center, ellipse cover,  #cc0000 0%,#c92e2e 48%,#890000 100%);
+							background: -o-radial-gradient(center, ellipse cover,  #cc0000 0%,#c92e2e 48%,#890000 100%);
+							background: -ms-radial-gradient(center, ellipse cover,  #cc0000 0%,#c92e2e 48%,#890000 100%);
+							background: radial-gradient(ellipse at center,  #cc0000 0%,#c92e2e 48%,#890000 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#890000',GradientType=1 );
+							font-size: 24px;
+
+							&:hover {
+								background: #cc4b4b;
+								background: -moz-radial-gradient(center, ellipse cover,  #cc4b4b 0%, #c64343 48%, #890000 100%);
+								background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#cc4b4b), color-stop(48%,#c64343), color-stop(100%,#890000));
+								background: -webkit-radial-gradient(center, ellipse cover,  #cc4b4b 0%,#c64343 48%,#890000 100%);
+								background: -o-radial-gradient(center, ellipse cover,  #cc4b4b 0%,#c64343 48%,#890000 100%);
+								background: -ms-radial-gradient(center, ellipse cover,  #cc4b4b 0%,#c64343 48%,#890000 100%);
+								background: radial-gradient(ellipse at center,  #cc4b4b 0%,#c64343 48%,#890000 100%);
+								filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc4b4b', endColorstr='#890000',GradientType=1 );
+							}
+						}
+						li.vezes { font-size: 27px }
+			}
+
+			.numero-serie { color: rgba(51, 51, 51, .75); font: 15px Tahoma; text-align: right }
+		}
+	}
+}
+
+
+// Estilos da apresentacao do job
+
+#apresentacao {
+	background: rgba(190, 190, 190, .5);
+    float: right;
+    color: rgba(0, 0, 0, .55);
+    font-family: Arial,sans-serif;
+    overflow: hidden;
+    padding: 20px;
+    width: 400px;
+    border-radius: 15px;
+
+    h2 {
+    	font-size: 26px;
+	    margin-bottom: 20px;
+    }
+
+    h3 {
+    	font-size: 20px;
+	    margin-bottom: 10px;
+    }
+
+    p {
+    	font-size: 15px;
+	    line-height: 20px;
+	    margin-bottom: 20px;
+
+	    a {
+	    	color: rgba(0, 0, 0, .55);
+	    	text-decoration: none;
+
+	    	&:hover {
+	    		text-decoration: underline;
+	    	}
+	    }
+
+	    strong {
+	    	font-weight: bold;
+	    }
+    }
+
+    #compatibilidade {
+    	overflow: hidden;
+
+    	li {
+    		background: url(../browser.png) no-repeat;
+    		display: inline-block;
+    		width: 32px;
+    		height: 32px;
+    		text-indent: -5000em;
+    		margin-right: 5px;
+    	}
+    	.firefox { background-position: -38px 0 }
+		.chrome { background-position: 0 0 }
+		.opera { background-position: -72px 0 }
+		.safari { background-position: -107px 0 }
+		.ie { background-position: -142px 0; opacity: .30 }
+    }
+
+    #share {
+    	background: rgba(0, 0, 0, .10);
+    	padding: 10px;
+    	h3 {
+    		color: #EEE;
+		    margin-left: 322px;
+		    margin-top: 2px;
+		    position: absolute;
+    	}
+    }
+
+    ul {
+    	margin-bottom: 20px;
+    	li {
+    		list-style: disc inside none;
+		    margin-bottom: 5px;
+		    font-size: 15px;
+    	}
+    }
+}

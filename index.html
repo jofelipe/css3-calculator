@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Modern CSS3 Calculator without images!</title>
+
+	<link href="css/style.less" rel="stylesheet/less" />
+	<script src="js/less.js"></script>
+
+	<!-- Fontes personalizadas -->
+	<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
+
+	<!-- Botões para compartilhar -->
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "e01d3466-c064-4d3c-a0a7-88bec6dc8ed0"}); </script>
+		
+</head>
+<body>
+
+	<div id="geral">
+
+		<div class="borda-calculadora">
+
+			<div id="calculadora">
+
+				<div class="topo-calculadora">
+
+					<div class="titulo">
+						<h1>Modern</h1>
+						<p class="descricao">CSS3 Calculator</p>
+					</div><!-- titulo -->
+
+					<div class="quadrados">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div><!-- quadrados -->
+				</div>
+
+				<div class="clear"></div>
+
+				<form name="Calc">
+
+				<input type="text" id="txtCalculadora" value="" name="txtCalculadora" maxlength="8" />
+
+				<div class="clear"></div>
+
+				<ul id="botoes-opcoes">
+					<li onClick="Calc.txtCalculadora.value = '&nbsp;'">C</li>
+					<li onClick="Calc.txtCalculadora.value += ' % '">%</li>
+					<li onclick="Calc.txtCalculadora.value=Math.sqrt(Calc.txtCalculadora.value)">√</li>
+					<li onClick="Calc.txtCalculadora.value += ' / '">÷</li>
+					<li onClick="Calc.txtCalculadora.value += '7'">7</li>
+					<li onClick="Calc.txtCalculadora.value += '8'">8</li>
+					<li onClick="Calc.txtCalculadora.value += '9'">9</li>
+					<li class="vezes" onClick="Calc.txtCalculadora.value += ' * '">x</li>
+					<li onClick="Calc.txtCalculadora.value += '4'">4</li>
+					<li onClick="Calc.txtCalculadora.value += '5'">5</li>
+					<li onClick="Calc.txtCalculadora.value += '6'">6</li>
+					<li onClick="Calc.txtCalculadora.value += ' - '">-</li>
+					<li onClick="Calc.txtCalculadora.value += '1'">1</li>
+					<li onClick="Calc.txtCalculadora.value += '2'">2</li>
+					<li onClick="Calc.txtCalculadora.value += '3'">3</li>
+					<li onClick="Calc.txtCalculadora.value += ' + '">+</li>
+					<li onClick="Calc.txtCalculadora.value += '0'">0</li>
+					<li onClick="Calc.txtCalculadora.value += '.'">.</li>
+					<li onClick="Calc.txtCalculadora.value = eval(Calc.txtCalculadora.value)">=</li>
+					<li class="off" onClick="Calc.txtCalculadora.value = ''">OFF</li>
+				</ul>
+
+				</form>
+
+				<p class="numero-serie">MCSS3C - 08H27</p>
+
+
+			</div><!-- calculadora -->
+
+		</div><!-- borda-calculadora -->
+
+
+
+
+
+		<div id="apresentacao">
+			<h2>Modern CSS3 Calculator without images!</h2>
+
+			<h3>Description:</h3>
+			<p>After checking the <a href="https://developer.mozilla.org/pt-BR/demosdetail/old-radio" target="_blank">Old Radio</a> created by <a href="http://twitter.com/bernarddeluna" target="_blank">Bernard de Luna</a>, <a href="mailto:zanoni.miranda@uniriotec.br" target="_blank">Zanoni Miranda</a> and <a href="http://twitter.com/zenorocha" target="_blank">Zeno Rocha</a>, had the idea of ​​creating something done only with HTML/CSS3, and without image, the result is to the left!
+
+			<h3>Features:</h3>
+			<ul>
+				<li>Without images;</li>
+				<li>Javascript only for calculations;</li>
+				<li>352 lines of CSS (No compiled);</li>
+				<li>CSS3 pure.</li>
+			</ul>
+
+			<h3>Compatibility:</h3>
+			<ul id="compatibilidade">
+				<li class="firefox" title="Firefox">Mozilla Firefox</li>
+				<li class="chrome" title="Chrome">Google Chrome</li>
+				<li class="opera" title="Opera">Opera</li>
+				<li class="safari" title="Safari">Safari</li>
+				<li class="ie" title="Don't use IE!">Internet Explorer</li>
+			</ul>
+
+			<p><strong>Development time:</strong> 08 hours and 27 minutes.</p>
+
+			<div id="share">
+				<h3>Share!</h3>
+				<span class='st_facebook_hcount' displayText='Facebook'></span>
+				<span class='st_twitter_hcount' displayText='Tweet'></span>
+			</div>
+		</div>
+
+	</div><!-- geral -->
+
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33243291-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
+</body>
+</html>

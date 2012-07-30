@@ -1,0 +1,1 @@
+After checking the Old Radio created by Bernard de Luna, Zanoni Miranda and Zeno Rocha, had the idea of ??creating something done only with HTML/CSS3, and without image.
